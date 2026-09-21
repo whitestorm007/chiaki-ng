@@ -43,9 +43,9 @@
 #define TAKION_INBOUND_STREAMS 0x64
 
 #define TAKION_REORDER_QUEUE_SIZE_EXP 4 // => 16 entries
-#define TAKION_AV_VIDEO_REORDER_QUEUE_SIZE_EXP 6 // => 64 entries
-#define TAKION_AV_REORDER_TIMEOUT_US 16000 // ~1 frame at 60fps
-#define TAKION_SEND_BUFFER_SIZE 16
+#define TAKION_AV_VIDEO_REORDER_QUEUE_SIZE_EXP 7 // => 128 entries (prevents queue overflow on burst)
+#define TAKION_AV_REORDER_TIMEOUT_US 33000 // ~2 frames at 60fps (absorbs Wi-Fi jitter spikes)
+#define TAKION_SEND_BUFFER_SIZE 32 // doubled to prevent upstream feedback re-send drop
 
 #define TAKION_POSTPONE_PACKETS_SIZE 32
 
